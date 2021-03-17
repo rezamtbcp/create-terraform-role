@@ -29,27 +29,27 @@ Access your `AWS Management console` and select IAM Service from AWS Managed Ser
 
 Select Users
 
-![]('/img/IAM Management Console 2021-03-16 23-12-08.png')
+![](img/IAMManagementConsole2021-03-1623-12-08.png)
 
 Then select Add User
 
-![](img/IAM Management Console 2021-03-16 21-36-42.png)
+![](img/IAMManagementConsole2021-03-1621-36-42.png)
 
 Select a name for your user, in my case: TerraformBuilder / Allow Pragmatic Access Only - Next
 
-![](img/IAM Management Console 2021-03-16 21-49-08.png)
+![](img/IAMManagementConsole2021-03-1621-49-08.png)
 
 Next
-![](img/IAM Management Console 2021-03-16 21-51-01.png)
+![](img/IAMManagementConsole2021-03-1621-51-01.png)
  
 Next
-![](img/IAM Management Console 2021-03-16 21-51-39.png)
+![](img/IAMManagementConsole2021-03-1621-51-39.png)
 
 Check the user information for the last time and press create 
-![](img/IAM Management Console 2021-03-16 21-52-27.png)
+![](img/IAMManagementConsole2021-03-1621-52-27.png)
 
 The Credentials will be created and ready to use for your terraform builder
-![](img/IAM Management Console 2021-03-16 21-54-00.png)
+![](img/IAMManagementConsole2021-03-1621-54-00.png)
 
 Download the credentials file / or you can just copy and paste the  Access Key and Secret Key
 
@@ -64,18 +64,18 @@ Before starting make sure you are on AWS Management Console / IAM dashboard.
 ### Creating Terraform Builder Role Policy
 
 From left hand-side of the dashboard, select `Policies` and then select 'Create policy'
-![](img/IAM Management Console 2021-03-16 22-06-59.png)
+![](img/IAMManagementConsole2021-03-1622-06-59.png)
 
 Copy and Paste the content of `TerraformBuilderPolicy.json` into the Json tab as shown in the screenshot.
 
 ![](IAM Management Console 2021-03-16 22-08-23.png)
 Next
 
-![](img/IAM Management Console 2021-03-16 22-09-26.png)
+![](img/IAMManagementConsole2021-03-1622-09-26.png)
 Next
 
 Name the policy `TerraformBuilderPolicy` and press create button.
-![](img/IAM Management Console 2021-03-16 22-10-46.png)
+![](img/IAMManagementConsole2021-03-1622-10-46.png)
 
 
 ## Creating IAM Role
@@ -83,24 +83,24 @@ Now we are going to Create a new role `TerraformBuilderRole` and assign the `Ter
 assumed by Terraform user to create our infrastructure.
 
 
-![](img/IAM Management Console 2021-03-16 22-15-02.png)
+![](img/IAMManagementConsole2021-03-1622-15-02.png)
 Next
 
 Make sure you use your AWS Account ID as shown on the following screenshot: 
-![](img/IAM Management Console 2021-03-16 22-16-04.png)
+![](img/IAMManagementConsole2021-03-1622-16-04.png)
 Next
 
 And attach the 'TerraformBuilderPolicy' to the role as shown here:
-![](img/IAM Management Console 2021-03-16 22-23-38.png)
+![](img/IAMManagementConsole2021-03-1622-23-38.png)
 Next
 
 
-![](img/IAM Management Console 2021-03-16 22-24-43.png)
+![](img/IAMManagementConsole2021-03-1622-24-43.png)
 Next
 
 Give a name to your role, in our case `TerraformBuilderRole`. This name matches the name defined in `TerraformBuilderInlinePolicy.json`
 if you are going to use a different name, make sure you update that policy as well.
-![](img/IAM Management Console 2021-03-16 22-27-08.png)
+![](img/IAMManagementConsole2021-03-1622-27-08.png)
 Next
 
 And now the role is created.
@@ -110,27 +110,27 @@ Finally we need to allow Terraform Builder role to assume the role defined in th
 from left-hand side menu and following the instruction:
 
 Search for IAM User `TerraformBuilder` and click on it 
-![](img/IAM Management Console 2021-03-16 22-29-57.png)
+![](img/IAMManagementConsole2021-03-1622-29-57.png)
 Next
 
 From `Permissions` tab select `Add inline policy`
-![](img/IAM Management Console 2021-03-16 22-32-06.png)
+![](img/IAMManagementConsole2021-03-1622-32-06.png)
 Next
 
 It will show `CreatePolicy` dialog and you need to copy and paste `TerraformBuilderInlinePolicy.json` into the `JSON` tab.
-![](img/IAM Management Console 2021-03-16 22-33-06.png)
+![](img/IAMManagementConsole2021-03-1622-33-06.png)
 Next
 
 Double check the Account number should be your Account number.
-![](img/IAM Management Console 2021-03-16 22-40-40.png)
+![](img/IAMManagementConsole2021-03-1622-40-40.png)
 Next
 
 And give a name to your Policy e.g. `TerraformBuilderInlinePolicy` and press create
-![](img/IAM Management Console 2021-03-16 22-42-14.png)
+![](img/IAMManagementConsole2021-03-1622-42-14.png)
 Next
 
 The created inline policy will be shown on your IAM user "Permissions" tab
-![](img/IAM Management Console 2021-03-16 22-45-51.png)
+![](img/IAMManagementConsole2021-03-1622-45-51.png)
 Next
 
 Now we are ready to use the IAM user for our Terraform client.
