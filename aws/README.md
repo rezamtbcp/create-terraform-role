@@ -29,7 +29,7 @@ Access your `AWS Management console` and select IAM Service from AWS Managed Ser
 
 Select Users
 
-![](img/IAM Management Console 2021-03-16 23-12-08.png)
+![](./img/IAM Management Console 2021-03-16 23-12-08.png)
 
 Then select Add User
 
