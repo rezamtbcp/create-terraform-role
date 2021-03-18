@@ -6,4 +6,4 @@ Terraform is one of the tool to build and provision infrasturcture components in
 
 This repo is focusing on how to creat these credentials in each cloud provider.
 
-![](https://imgur.com/ungafWu)
+![](https://i.imgur.com/ungafWu.png)
